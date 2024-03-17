@@ -1,0 +1,41 @@
+
+export const metadata = {
+    title: "ShowLeaveRequestsView.java"
+}
+
+
+# File Name: `ShowLeaveRequestsView.java`
+
+## Overview:
+The `ShowLeaveRequestsView` class is a Java class that implements the `IView` interface. It is responsible for displaying leave requests for a specific user in a window using the Lanterna library. The view consists of a list of leave requests with details such as type, start date, end date, and status.
+
+## Usage:
+The `ShowLeaveRequestsView` class can be used to create a window that displays leave requests for a specific user. Below is an example of how to use the `ShowLeaveRequestsView` class:
+
+```java
+// Create a MultiWindowTextGUI instance
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+
+// Create a RepositoriesDto instance
+RepositoriesDto repositoriesDto = new RepositoriesDto(); // assuming repositories are initialized
+
+// Specify the user ID for which leave requests should be displayed
+int userId = 123;
+
+// Create an instance of ShowLeaveRequestsView
+ShowLeaveRequestsView showLeaveRequestsView = new ShowLeaveRequestsView(gui, userId, repositoriesDto);
+
+// Get the BasicWindow from the ShowLeaveRequestsView instance
+BasicWindow window = showLeaveRequestsView.getWindow();
+
+// Add the window to the GUI
+gui.addWindowAndWait(window);
+```
+
+### Notes:
+- The `ShowLeaveRequestsView` class relies on the Lanterna library for GUI components.
+- Ensure that the `RepositoriesDto` object passed to the constructor contains initialized repositories.
+- The leave requests are filtered based on the provided `userId`.
+- The window includes details such as the type of leave, start date, end date, and status for each leave request.
+- The window includes a "Close" button that allows the user to close the window.
+

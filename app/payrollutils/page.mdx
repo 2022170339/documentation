@@ -1,0 +1,57 @@
+
+export const metadata = {
+    title: "PayrollUtils.java"
+}
+
+
+# File Name: `PayrollUtils.java`
+
+## Overview: 
+The `PayrollUtils.java` file contains a class named `PayrollUtils` that provides static methods for computing various payroll-related calculations such as PAGIBIG, SSS, Philhealth, tax deductions, and overtime pay. These methods take different input parameters related to an employee's pay and return calculated values based on specific rules and conditions.
+
+## Usage: 
+Here is how you can use the `PayrollUtils` class methods in a real-world scenario:
+
+### 1. Computing PAGIBIG Contribution:
+```java
+double grossPay = 2000.0;
+double pagibigContribution = PayrollUtils.computePAGIBIG(grossPay);
+System.out.println("PAGIBIG Contribution: " + pagibigContribution);
+```
+
+### 2. Computing SSS Contribution:
+```java
+double basicSalary = 5000.0;
+double sssContribution = PayrollUtils.computeSSS(basicSalary);
+System.out.println("SSS Contribution: " + sssContribution);
+```
+
+### 3. Computing Philhealth Contribution:
+```java
+double basicSalary = 6000.0;
+double philhealthContribution = PayrollUtils.computePhilhealth(basicSalary);
+System.out.println("Philhealth Contribution: " + philhealthContribution);
+```
+
+### 4. Computing Tax Deduction:
+```java
+double basicSalary = 25000.0;
+double phealth = 300.0;
+double pagibig = 200.0;
+double sss = 150.0;
+double taxDeduction = PayrollUtils.computeTax(basicSalary, pagibig, phealth, sss);
+System.out.println("Tax Deduction: " + taxDeduction);
+```
+
+### 5. Computing Overtime Pay:
+```java
+double totalHours = 10.0;
+double hourlyRate = 20.0;
+double overtimePay = PayrollUtils.computeOvertimePay(totalHours, hourlyRate);
+System.out.println("Overtime Pay: " + overtimePay);
+```
+
+### Notes:
+- The `PayrollUtils` class methods can be used to calculate various payroll-related deductions and payments efficiently.
+- Ensure to provide valid input values to the methods to get accurate calculations.
+- Handle edge cases such as boundary values carefully to avoid unexpected results.

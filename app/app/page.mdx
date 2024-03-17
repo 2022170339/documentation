@@ -1,0 +1,35 @@
+
+export const metadata = {
+    title: "App.java"
+}
+
+
+# File Name: `App.java`
+
+## Overview: 
+The `App.java` file contains the main entry point for the application. It initializes the database connection, sets up the user interface using Lanterna library, and initializes repositories and services required for the application.
+
+## Usage: 
+The `App` class is responsible for initializing the application components and launching the user interface. Here is a basic usage example:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        try {
+            App app = new App();
+            // Perform necessary operations using the initialized repositories and services
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Notes
+- The `App` class connects to the database using ORM Lite library through the `JdbcConnectionSource`.
+- It sets up the Lanterna terminal and screen for creating a text-based user interface.
+- The class initializes repositories for various entities such as users, roles, employees, attendance, etc., using the established database connection.
+- It also initializes a `SeedService` to populate initial data into the repositories.
+- The `LoginView` is created and displayed using the initialized `MultiWindowTextGUI` for user interaction.
+
+This file acts as the central hub for initializing the application and setting up the necessary components for its functioning.

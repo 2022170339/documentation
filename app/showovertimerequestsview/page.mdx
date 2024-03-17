@@ -1,0 +1,37 @@
+
+export const metadata = {
+    title: "ShowOvertimeRequestsView.java"
+}
+
+
+# File Name: `ShowOvertimeRequestsView.java`
+
+## Overview:
+The `ShowOvertimeRequestsView.java` file is a Java class that represents a view for displaying overtime requests. It retrieves overtime requests for a specific user, calculates the total hours for each request, and displays the details in a graphical user interface using the Lanterna library.
+
+## Usage:
+The `ShowOvertimeRequestsView` class is used to create a window displaying overtime requests for a specific user. It takes the MultiWindowTextGUI instance, the user ID, and a RepositoriesDto object as parameters in the constructor. Here is an example of how to use the `ShowOvertimeRequestsView` class:
+
+```java
+// Create an instance of RepositoriesDto
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+
+// Create an instance of MultiWindowTextGUI
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+
+// Define the user ID
+int userId = 123;
+
+// Create an instance of ShowOvertimeRequestsView
+ShowOvertimeRequestsView showOvertimeRequestsView = new ShowOvertimeRequestsView(gui, userId, repositoriesDto);
+
+// Get the window and display it
+BasicWindow window = showOvertimeRequestsView.getWindow();
+gui.addWindowAndWait(window);
+```
+
+### Notes:
+- Ensure that the Lanterna library is included in the project dependencies to use the graphical user interface components.
+- The class filters overtime requests based on the provided user ID and displays the date, total hours, start time, end time, and status of each request.
+- The total hours are calculated by parsing the start and end times of each overtime request and calculating the duration between them.
+- Exception handling is implemented for parsing time values from strings to LocalTime objects.

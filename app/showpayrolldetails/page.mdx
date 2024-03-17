@@ -1,0 +1,38 @@
+
+export const metadata = {
+    title: "ShowPayrollDetails.java"
+}
+
+
+# File Name: `ShowPayrollDetails.java`
+
+## Overview
+The `ShowPayrollDetails.java` file contains a Java class that implements the `IView` interface to display payroll details for a specific user and payroll ID. It creates a GUI window using the Lanterna library to show detailed information about a payroll entry, including user details, pay dates, salary components, deductions, and net pay.
+
+## Usage
+To use the `ShowPayrollDetails` class, you can create an instance by providing the necessary parameters like the `MultiWindowTextGUI`, `userId`, `payrollId`, and `RepositoriesDto` object. Here is an example of how you can instantiate and use the `ShowPayrollDetails` class:
+
+```java
+// Create an instance of RepositoriesDto
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+
+// Create an instance of MultiWindowTextGUI
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+
+// Provide the user ID and payroll ID
+int userId = 1;
+int payrollId = 1;
+
+// Instantiate the ShowPayrollDetails class
+ShowPayrollDetails payrollDetails = new ShowPayrollDetails(gui, userId, payrollId, repositoriesDto);
+
+// Get the window and display it
+BasicWindow window = payrollDetails.getWindow();
+gui.addWindowAndWait(window);
+```
+
+### Notes
+- This class relies on the Lanterna library for creating GUI windows and components.
+- It fetches payroll and user information using the provided `RepositoriesDto` object.
+- Ensure the user and payroll IDs provided exist in the repositories to display accurate details.
+- The class follows the Model-View-Controller (MVC) design pattern for separation of concerns.

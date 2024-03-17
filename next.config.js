@@ -1,4 +1,8 @@
-const withMDX = require('@next/mdx')()
+const withMDX = require('@next/mdx')({
+  options: {
+    remarkPlugins: [require("remark-prism")],
+  }
+})
 const removeImports = require("next-remove-imports")();
 
 /** @type {import('next').NextConfig} */

@@ -1,0 +1,43 @@
+
+export const metadata = {
+    title: "Authentication.java"
+}
+
+
+# File Name: `Authentication.java`
+
+## Overview: 
+The `Authentication.java` file contains a Java class named `Authentication` that provides methods for password hashing and authentication using the SHA-256 hashing algorithm. The `Authentication` class has a static method `hashPassword` to generate a hashed representation of a password and a static method `authenticate` to compare a plain text password with a hashed password string.
+
+## Usage: 
+The `Authentication` class can be used in scenarios where secure password storage and authentication are required. Below is an example demonstrating how to use the `Authentication` class in a Java application:
+
+```java
+package com.example;
+
+import com.mmdc.oop.Utils.Authentication;
+
+public class Main {
+    public static void main(String[] args) {
+        String username = "admin";
+        String password = "password123";
+
+        // Hash the password
+        String hashedPassword = Authentication.hashPassword(password);
+
+        // Simulate authentication process
+        boolean isAuthenticated = Authentication.authenticate(username, password, hashedPassword);
+
+        if (isAuthenticated) {
+            System.out.println("Authentication successful for user: " + username);
+        } else {
+            System.out.println("Authentication failed for user: " + username);
+        }
+    }
+}
+```
+
+### Notes:
+- The `Authentication` class uses the SHA-256 hashing algorithm for password hashing. Ensure compatibility with other systems that may require a different hashing algorithm.
+- Performance considerations: Hashing passwords can be computationally expensive, especially for large-scale applications. Consider using salted hashing for additional security.
+- Handle edge cases: Properly handle exceptions like `NoSuchAlgorithmException` that may occur during the password hashing process.

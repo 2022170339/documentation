@@ -1,0 +1,29 @@
+
+export const metadata = {
+    title: "EditUserView.java"
+}
+
+
+# File Name: `EditUserView.java`
+## Overview: 
+The `EditUserView` class is a Java file that implements the `IView` interface. It represents a view for editing user information in a GUI application. The class contains GUI components for editing user details such as login information, employee information, user role selection, work days selection, and shift hours configuration.
+
+## Usage: 
+The `EditUserView` class is used to display a window for editing user details, including login information, employee information, user roles, workdays, and shift hours. It allows users to update user information and save the changes.
+
+```java
+// Example of creating an EditUserView instance and displaying the window
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+RepositoriesDto repositoriesDto = new RepositoriesDto(/* pass repositories */);
+EditUserView editUserView = new EditUserView(gui, userId, repositoriesDto);
+gui.addWindowAndWait(editUserView.getWindow());
+```
+
+### Notes:
+- The class uses the Lanterna library for creating GUI components.
+- Ensure all required fields are filled before updating the user information.
+- Validate input data such as salary, hourly rate, and shift times to ensure they are in the correct format.
+- Handle edge cases such as password confirmation and user role selection.
+- The class follows the MVC (Model-View-Controller) design pattern for separating concerns.
+
+The `EditUserView` class provides a user-friendly interface for updating user information efficiently in a GUI application.

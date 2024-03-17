@@ -1,0 +1,30 @@
+
+export const metadata = {
+    title: "GeneratePayrollView.java"
+}
+
+
+# File Name: `GeneratePayrollView.java`
+
+## Overview:
+The `GeneratePayrollView.java` file is a Java class that represents a view for generating payroll for users. It contains methods to display a window with a list of users to select, calculate payroll based on attendance and overtime data, and save the payroll information with deductions and net pay.
+
+## Usage:
+The `GeneratePayrollView` class is used to interact with the user interface to generate payroll for selected users. Below is an example demonstrating how to use the `GeneratePayrollView` class:
+
+```java
+// Create an instance of the GeneratePayrollView with GUI and repositoriesDto
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+GeneratePayrollView generatePayrollView = new GeneratePayrollView(gui, repositoriesDto);
+
+// Get the window and display it
+BasicWindow window = generatePayrollView.getWindow();
+gui.addWindowAndWait(window);
+```
+
+### Notes:
+- The `GeneratePayrollView` class relies on repositoriesDto to access user, attendance, overtime, and payroll data.
+- It calculates total hours worked, regular pay, overtime pay, deductions (SSS, PhilHealth, PAGIBIG, tax), and net pay for each user.
+- The class handles error messages for selecting users and date range.
+

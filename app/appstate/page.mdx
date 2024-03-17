@@ -1,0 +1,27 @@
+
+export const metadata = {
+    title: "AppState.java"
+}
+
+
+# File Name: `AppState.java`
+
+## Overview:
+The `AppState.java` file contains a class that represents the application state of the system. It includes static fields to store information about the current user, employee, role, views, calendar dates, and selected dates for payroll, leave, and overtime. This class helps manage and track the current state of the application.
+
+## Usage:
+The `AppState` class can be utilized to store and access the application state information across different components or modules in a Java application. Below is an example demonstrating how to use the `AppState` class to set the current user and retrieve the current calendar date:
+
+```java
+// Setting the current user
+AppState.currentUser = new User("JohnDoe", "john.doe@example.com", "password123");
+
+// Retrieving the current calendar date
+LocalDate currentDate = AppState.currentCalendarDate;
+System.out.println("Current Calendar Date: " + currentDate);
+```
+
+### Notes:
+- Ensure that the `AppState` class is initialized and its fields are appropriately updated based on the application flow to maintain the correct state.
+- It is essential to handle edge cases where the application state may need to be reset or updated based on user actions or system events.
+- Consider the thread safety of accessing and modifying the static fields of the `AppState` class when used in a multi-threaded environment.

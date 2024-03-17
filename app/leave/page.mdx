@@ -1,0 +1,37 @@
+
+export const metadata = {
+    title: "Leave.java"
+}
+
+
+# File Name: `Leave.java`
+
+## Overview: 
+The `Leave.java` file is a Java class that represents a leave request in an object-oriented programming model. It defines the structure and behavior of a leave request entity, including attributes like ID, start date, end date, reason, status, and the user associated with the leave request.
+
+## Usage: 
+The `Leave` class can be used to create and manage leave requests within an application. Below is an example of how the `Leave` class can be used in a real-world scenario:
+
+```java
+// Creating a new leave request
+Leave leaveRequest = new Leave();
+leaveRequest.setDateStart("2022-10-01");
+leaveRequest.setDateEnd("2022-10-05");
+leaveRequest.setReason("Vacation");
+leaveRequest.setStatus("Pending");
+
+// Associating the leave request with a user
+User user = new User();
+user.setId(123);
+leaveRequest.setUser(user);
+
+// Saving the leave request to the database
+LeaveDao leaveDao = new LeaveDao();
+leaveDao.create(leaveRequest);
+```
+
+### Notes
+- The `Leave` class is designed to work with the ORM framework ORMlite, as indicated by the `@DatabaseTable` and `@DatabaseField` annotations.
+- Ensure compatibility with the ORMlite version being used in the project.
+- Performance considerations may include optimizing database queries related to leave requests.
+- Handle edge cases such as invalid dates or null user associations appropriately in the application logic.

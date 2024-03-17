@@ -1,0 +1,53 @@
+
+export const metadata = {
+    title: "RoleRepository.java"
+}
+
+
+# File Name: `RoleRepository.java`
+
+## Overview:
+The `RoleRepository` Java class is an implementation of the `IRepository` interface specifically for handling CRUD operations related to the `Role` entity. It utilizes the ORM (Object-Relational Mapping) framework ORMlite to interact with the underlying database. The class provides methods for finding a role by its ID, retrieving all roles, and saving a new role to the database.
+
+## Usage:
+You can utilize the `RoleRepository` class to interact with the database and perform operations on `Role` entities. Below are some examples of how you can use this class:
+
+### Retrieving a Role by ID:
+```java
+// Create a new RoleRepository instance with a connection source
+RoleRepository roleRepository = new RoleRepository(connectionSource);
+
+// Find a role by its ID
+Role foundRole = roleRepository.findById(1);
+System.out.println("Found Role: " + foundRole);
+```
+
+### Retrieving All Roles:
+```java
+// Create a new RoleRepository instance with a connection source
+RoleRepository roleRepository = new RoleRepository(connectionSource);
+
+// Retrieve all roles
+List<Role> allRoles = roleRepository.findAll();
+for (Role role : allRoles) {
+    System.out.println("Role: " + role);
+}
+```
+
+### Saving a Role to the Database:
+```java
+// Create a new Role instance
+Role newRole = new Role("Admin");
+
+// Create a new RoleRepository instance with a connection source
+RoleRepository roleRepository = new RoleRepository(connectionSource);
+
+// Save the new role to the database
+Role savedRole = roleRepository.save(newRole);
+System.out.println("Saved Role: " + savedRole);
+```
+
+### Notes:
+- This `RoleRepository` class is compatible with Java applications that use the ORMlite library for database operations.
+- Performance considerations may include optimizing database queries and transactions for better efficiency.
+- Edge cases like handling database connection errors or unique constraint violations should be properly handled in real-world scenarios.

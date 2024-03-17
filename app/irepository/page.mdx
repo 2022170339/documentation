@@ -1,0 +1,53 @@
+
+export const metadata = {
+    title: "IRepository.java"
+}
+
+
+# File Name: `IRepository.java`
+
+## Overview: 
+The `IRepository.java` file defines an interface `IRepository` that outlines the basic methods for interacting with a generic repository. It includes methods for finding an entity by its ID, retrieving all entities, saving a new entity, updating an existing entity, and deleting an entity.
+
+## Usage: 
+The `IRepository` interface can be implemented by classes that need to create repositories for different types of entities. Below is an example of how this interface can be used:
+
+```java
+package com.mmdc.oop.Repositories;
+
+import com.mmdc.oop.Interfaces.IRepository;
+import java.util.List;
+
+public class EntityRepository implements IRepository<Entity, Long> {
+
+    @Override
+    public Entity findById(Long id) {
+        // Implementation to find an entity by ID
+    }
+
+    @Override
+    public List<Entity> findAll() {
+        // Implementation to retrieve all entities
+    }
+
+    @Override
+    public Entity save(Entity entity) {
+        // Implementation to save a new entity
+    }
+
+    @Override
+    public Entity update(Entity entity) {
+        // Implementation to update an existing entity
+    }
+
+    @Override
+    public void delete(Entity entity) {
+        // Implementation to delete an entity
+    }
+}
+```
+
+### Notes
+- This interface can be extended to create specific repositories for different types of entities.
+- It is important to handle exceptions and error cases appropriately in the implementation of these methods.
+- Implementations of this interface should ensure proper error handling and data integrity.

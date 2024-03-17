@@ -1,0 +1,30 @@
+
+export const metadata = {
+    title: "CreateUserView.java"
+}
+
+
+# File Name: `CreateUserView.java`
+
+## Overview
+The `CreateUserView.java` file is a Java class that implements the `IView` interface. It provides a graphical user interface for creating a new user in a system. The class contains a form with fields for entering user login information, employee information, selecting user roles, setting workdays, and defining shift hours. It also includes validation logic to ensure that all required fields are filled correctly before creating a new user.
+
+## Usage
+The `CreateUserView` class is used to display a window for creating a new user in a system. It requires an instance of the `MultiWindowTextGUI` class and a `RepositoriesDto` object containing repositories for user, role, user role, and employee data.
+
+To use the `CreateUserView` class, you can create an instance of it by passing the necessary parameters and then add it to the GUI. Below is an example of how to use the `CreateUserView` class:
+
+```java
+// Instantiate the CreateUserView
+CreateUserView createUserView = new CreateUserView(gui, repositoriesDto);
+
+// Add the window to the GUI
+gui.addWindow(createUserView.getWindow());
+```
+
+### Notes
+- Ensure that all required fields are filled before creating a new user.
+- Select a role for the user by checking the corresponding checkbox.
+- Define the workdays for the employee by selecting the checkboxes for each day.
+- Provide valid shift start and end times in HH:mm format.
+

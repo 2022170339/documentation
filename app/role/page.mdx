@@ -1,0 +1,35 @@
+
+export const metadata = {
+    title: "Role.java"
+}
+
+
+# File Name: `Role.java`
+
+## Overview:
+The `Role.java` file defines a Java class named `Role` that represents a role entity in an object-oriented programming system. This class is annotated with ORMlite annotations for database mapping, specifying the table name as "roles" and defining fields for the role ID and role name.
+
+## Usage:
+The `Role` class can be used to model roles in a system and interact with a corresponding database table. Below is an example demonstrating how to create an instance of the `Role` class and utilize its methods:
+
+```java
+import com.mmdc.oop.Models.Role;
+
+// Create a new role instance
+Role role = new Role();
+
+// Set the role name
+role.setRoleName("Admin");
+
+// Get the role ID and role name
+int roleId = role.getId();
+String roleName = role.getRoleName();
+
+System.out.println("Role ID: " + roleId);
+System.out.println("Role Name: " + roleName);
+```
+
+### Notes
+- This class is designed to work with ORMlite library for object-relational mapping.
+- Ensure proper database configuration and connection for the class to interact with a database.
+- Handle null values appropriately when setting the role name to avoid exceptions.

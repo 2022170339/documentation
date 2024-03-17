@@ -1,0 +1,46 @@
+
+export const metadata = {
+    title: "UserRepository.java"
+}
+
+
+# File Name: `UserRepository.java`
+
+## Overview: 
+The `UserRepository.java` file is a class that implements the `IRepository` interface for handling CRUD (Create, Read, Update, Delete) operations related to the `User` model. It utilizes ORMLite, a lightweight Java ORM (Object-Relational Mapping) library, to interact with the database. The class provides methods to find a user by ID, retrieve all users, save a new user, update an existing user, and delete a user from the database.
+
+## Usage: 
+The `UserRepository` class can be used to interact with a database to perform operations on user entities. Below is an example demonstrating how to use the `UserRepository` class:
+
+```java
+// Create a connection source
+ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl, username, password);
+
+// Instantiate the UserRepository
+UserRepository userRepository = new UserRepository(connectionSource);
+
+// Find a user by ID
+User user = userRepository.findById(1);
+
+// Retrieve all users
+List<User> allUsers = userRepository.findAll();
+
+// Create a new user
+User newUser = new User("John", "Doe");
+userRepository.save(newUser);
+
+// Update an existing user
+user.setLastName("Smith");
+userRepository.update(user);
+
+// Delete a user
+userRepository.delete(user);
+
+// Close the connection after use
+connectionSource.close();
+```
+
+### Notes:
+- Ensure that the `User` model class is properly defined and compatible with ORMLite annotations for correct database mapping.
+- Performance considerations may include optimizing database queries and transactions for efficiency.
+- Handle exceptions appropriately to manage errors during database operations.

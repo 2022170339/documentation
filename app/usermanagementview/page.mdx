@@ -1,0 +1,38 @@
+
+export const metadata = {
+    title: "UserManagementView.java"
+}
+
+
+# File Name: `UserManagementView.java`
+
+## Overview:
+The `UserManagementView.java` file contains the `UserManagementView` class, which implements the `IView` interface. This class is responsible for handling the user interface related to user management in an application.
+
+## Usage:
+The `UserManagementView` class can be used to create a basic window for user management. Below is an example of how to use the `UserManagementView` class to create a window in a Java application:
+
+```java
+package com.example;
+
+import com.mmdc.oop.Views.UserManagement.UserManagementView;
+import com.googlecode.lanterna.gui2.BasicWindow;
+
+public class Main {
+    public static void main(String[] args) {
+        UserManagementView userManagementView = new UserManagementView();
+        BasicWindow userManagementWindow = userManagementView.getWindow();
+        userManagementWindow.setHints(Collections.singletonList(Window.Hint.CENTER));
+        userManagementWindow.setCloseWindowWithEscape(true);
+        // Add components to the user management window
+        // userManagementWindow.addComponent(new SomeComponent());
+        // userManagementWindow.addComponent(new AnotherComponent());
+        userManagementWindow.show();
+    }
+}
+```
+
+### Notes:
+- This file is dependent on the `IView` interface and classes in the `com.googlecode.lanterna.gui2` package.
+- Performance considerations may arise if a large number of components are added to the window.
+- Handle exceptions and error scenarios when implementing the `getWindow` method for proper functionality.

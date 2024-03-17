@@ -1,0 +1,42 @@
+
+export const metadata = {
+    title: "RepositoriesDto.java"
+}
+
+
+# File Name: `RepositoriesDto.java`
+
+## Overview:
+The `RepositoriesDto.java` file contains a DTO (Data Transfer Object) class that encapsulates repositories for various entities such as users, roles, employees, attendance, overtime, leave, payroll, and user roles. It provides getters and setters for accessing and modifying the repository instances.
+
+## Usage:
+The `RepositoriesDto` class can be used to efficiently manage and access different repository instances related to various entities in a software application. Below is an example demonstrating how to create an instance of `RepositoriesDto` and use its methods to set and get repository instances:
+
+```java
+// Creating instances of repositories
+UserRepository userRepository = new UserRepository();
+RoleRepository roleRepository = new RoleRepository();
+UserRoleRepository userRoleRepository = new UserRoleRepository();
+EmployeeRepository employeeRepository = new EmployeeRepository();
+AttendanceRepository attendanceRepository = new AttendanceRepository();
+OvertimeRepository overtimeRepository = new OvertimeRepository();
+LeaveRepository leaveRepository = new LeaveRepository();
+PayrollRepository payrollRepository = new PayrollRepository();
+
+// Creating an instance of RepositoriesDto and passing repository instances to the constructor
+RepositoriesDto repositoriesDto = new RepositoriesDto(userRepository, roleRepository, userRoleRepository, employeeRepository, attendanceRepository, overtimeRepository, leaveRepository, payrollRepository);
+
+// Getting and setting repository instances
+repositoriesDto.setPayrollRepository(payrollRepository);
+PayrollRepository retrievedPayrollRepository = repositoriesDto.getPayrollRepository();
+
+repositoriesDto.setAttendanceRepository(attendanceRepository);
+AttendanceRepository retrievedAttendanceRepository = repositoriesDto.getAttendanceRepository();
+
+// Similarly, you can get and set other repository instances as well
+```
+
+### Notes:
+- Ensure that the repository instances passed to the `RepositoriesDto` constructor are properly initialized.
+- Handle null checks when getting or setting repository instances to prevent NullPointerExceptions.
+- The `RepositoriesDto` class follows the principle of encapsulation by providing private fields and public getter/setter methods for accessing repositories.

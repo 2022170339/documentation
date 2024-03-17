@@ -1,0 +1,49 @@
+
+export const metadata = {
+    title: "Attendance.java"
+}
+
+
+# File Name: `Attendance.java`
+
+## Overview:
+The `Attendance.java` file defines a Java class `Attendance` that represents attendance records. It utilizes the ORM library ORMlite for database interactions and includes fields for storing attendance data such as date in, time in, date out, time out, and a reference to the associated user.
+
+## Usage:
+The `Attendance.java` class can be used to store and retrieve attendance information for users in a database. Below is an example demonstrating how to create an instance of `Attendance` and set/get its properties:
+
+```java
+// Creating a new Attendance object
+Attendance attendance = new Attendance();
+
+// Setting date in
+attendance.setDateIn("2022-10-12");
+
+// Setting time in
+attendance.setTimeIn("09:00 AM");
+
+// Setting date out
+attendance.setDateOut("2022-10-12");
+
+// Setting time out
+attendance.setTimeOut("05:00 PM");
+
+// Setting the associated user
+User user = new User();
+user.setId(1); // Assuming user ID is 1
+attendance.setUser(user);
+
+// Getting date in
+String dateIn = attendance.getDateIn();
+
+// Getting time out
+String timeOut = attendance.getTimeOut();
+
+// Getting the associated user
+User associatedUser = attendance.getUser();
+```
+
+### Notes
+- Ensure compatibility with the ORMlite library version being used.
+- Consider performance implications when dealing with a large number of attendance records.
+- Handle edge cases such as null values for date/time fields appropriately.

@@ -1,0 +1,31 @@
+
+export const metadata = {
+    title: "SeedService.java"
+}
+
+
+# File Name: `SeedService.java`
+
+## Overview:
+The `SeedService` class is responsible for seeding initial data into the system database. It creates default users, roles, and assigns roles to users if they do not already exist in the database. The `seed` method populates the database with initial data, the `clear` method deletes all users and roles from the database, and the `createUser` method allows creating a user with a specified username and password.
+
+## Usage:
+To use the `SeedService` class in a real-world scenario, you would typically instantiate an object of `SeedService` by passing the required repositories as a parameter to its constructor. Then, you can call the `seed` method to seed the initial data into the database. Below is an example of how you can use the `SeedService` class:
+
+```java
+import com.mmdc.oop.Services.SeedService;
+import com.mmdc.oop.DTO.RepositoriesDto;
+
+// Instantiate the SeedService with the required repositories
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+SeedService seedService = new SeedService(repositoriesDto);
+
+// Seed the initial data into the database
+seedService.seed();
+```
+
+### Notes:
+- Ensure that the required repositories are correctly initialized and injected into the `SeedService` constructor before calling the `seed` method.
+- Handle any exceptions that may occur during the seeding process to maintain the integrity of the database.
+- The `clear` method should be used with caution as it deletes all users and roles from the database.
+

@@ -1,0 +1,45 @@
+
+export const metadata = {
+    title: "DashboardView.java"
+}
+
+
+# File Name: `DashboardView.java`
+
+## Overview: 
+The `DashboardView` class represents the view for the dashboard of the application. It provides functionality to display user information, manage user roles, handle attendance tracking, manage leave requests, manage overtime requests, and generate payroll reports.
+
+## Usage:
+The `DashboardView` class is used to create and display the dashboard interface for different user roles in the application. Below are some examples of how this class can be used:
+
+### Displaying the Dashboard:
+```java
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+RepositoriesDto repositoriesDto = new RepositoriesDto(); // Initialize repositoriesDto with required repositories
+DashboardView dashboardView = new DashboardView(gui, repositoriesDto);
+gui.addWindowAndWait(dashboardView.getWindow());
+```
+
+### Handling User Management:
+The `DashboardView` class provides functionality to manage users, roles, and permissions based on the current user's role.
+
+### Managing Attendance:
+Users can view and track their attendance by clocking in and out within their scheduled work hours using the interface provided by the `DashboardView`.
+
+### Managing Leave Requests:
+Users can view, approve, or decline leave requests through the dashboard interface. The `DashboardView` allows users with appropriate permissions to take actions on leave requests.
+
+### Managing Overtime Requests:
+Users can view, approve, or decline overtime requests through the dashboard interface. The `DashboardView` enables users with the necessary permissions to process overtime requests.
+
+### Generating Payroll Reports:
+The `DashboardView` facilitates the generation of payroll reports for selected pay periods. Users can view and manage payroll information using the provided interface.
+
+### Navigating through Dashboard:
+Users can navigate through different sections of the dashboard based on their role and permissions by interacting with the checkboxes and buttons present in the dashboard view.
+
+### Notes:
+- The class contains methods to handle user interactions, update user profiles, record attendance, manage leave and overtime requests, and generate payroll reports.
+- It utilizes the `RepositoriesDto` object to access various repositories for user, role, attendance, leave, and overtime data.
+- The `DashboardView` class dynamically adjusts its content based on the current user's role to display relevant information and functionalities.
+

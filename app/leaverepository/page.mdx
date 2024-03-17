@@ -1,0 +1,45 @@
+
+export const metadata = {
+    title: "LeaveRepository.java"
+}
+
+
+# File Name: `LeaveRepository.java`
+
+## Overview: 
+The `LeaveRepository` class is a repository implementation that interacts with a database using ORMLite library to perform CRUD operations on `Leave` entities. It provides methods to find a leave by ID, fetch all leaves, save a new leave, update an existing leave, and delete a leave.
+
+## Usage: 
+To use the `LeaveRepository` class, you need to provide a `ConnectionSource` object during initialization. Below is an example demonstrating how to use the `LeaveRepository` class:
+
+```java
+// Creating a ConnectionSource object
+ConnectionSource connectionSource = ...; // Initialize your connection source
+
+// Creating a LeaveRepository instance
+LeaveRepository leaveRepository = new LeaveRepository(connectionSource);
+
+// Finding a leave by ID
+Leave leave = leaveRepository.findById(1);
+
+// Fetching all leaves
+List<Leave> allLeaves = leaveRepository.findAll();
+
+// Saving a new leave
+Leave newLeave = new Leave(); // Initialize your leave object
+Leave savedLeave = leaveRepository.save(newLeave);
+
+// Updating an existing leave
+Leave existingLeave = ...; // Fetch an existing leave object
+existingLeave.setSomeProperty("New Value");
+Leave updatedLeave = leaveRepository.update(existingLeave);
+
+// Deleting a leave
+Leave leaveToDelete = ...; // Fetch a leave object to delete
+leaveRepository.delete(leaveToDelete);
+```
+
+### Notes
+- Ensure compatibility with the ORMLite library version being used.
+- Consider performance implications when dealing with large datasets.
+- Handle exceptions and edge cases appropriately to maintain data integrity.

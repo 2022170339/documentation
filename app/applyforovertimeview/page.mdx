@@ -1,0 +1,36 @@
+
+export const metadata = {
+    title: "ApplyForOvertimeView.java"
+}
+
+
+# File Name: `ApplyForOvertimeView.java`
+
+## Overview:
+The `ApplyForOvertimeView.java` file contains the implementation of a view for applying for overtime in a Java application. It creates a window where users can select dates to apply for overtime, view a calendar, and submit their overtime applications.
+
+## Usage:
+The `ApplyForOvertimeView` class is used to display a window for users to apply for overtime. Below is a simple example demonstrating how to use the `ApplyForOvertimeView` class:
+
+```java
+// Create an instance of RepositoriesDto
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+
+// Create an instance of MultiWindowTextGUI
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+
+// Specify the userId for the user applying for overtime
+int userId = 123;
+
+// Create an instance of ApplyForOvertimeView
+ApplyForOvertimeView applyForOvertimeView = new ApplyForOvertimeView(gui, userId, repositoriesDto);
+
+// Add the ApplyForOvertimeView window to the GUI and display it
+gui.addWindowAndWait(applyForOvertimeView.getWindow());
+```
+
+### Notes:
+- This class interacts with the `RepositoriesDto` class that provides access to repositories.
+- It handles the process of selecting dates for overtime application and submitting the application.
+- The class contains logic to check and validate the selected overtime date against existing attendance records and user information.
+- It uses Lanterna library components for the GUI interface.

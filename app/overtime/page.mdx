@@ -1,0 +1,35 @@
+
+export const metadata = {
+    title: "Overtime.java"
+}
+
+
+# File Name: `Overtime.java`
+
+## Overview:
+The `Overtime.java` file represents a model class for handling overtime information in an application. It defines the structure of overtime data, including fields such as id, date, start time, end time, status, attendance, and user. This class is annotated with database annotations using ORMLite to map the class to a corresponding database table.
+
+## Usage:
+The `Overtime` class can be used to store and manage overtime details for users. Below is an example demonstrating how to create an instance of the `Overtime` class and set its attributes in a Java application:
+
+```java
+// Creating an instance of Overtime
+Overtime overtime = new Overtime();
+
+// Setting attributes
+overtime.setDate("2022-01-15");
+overtime.setTimeStart("09:00 AM");
+overtime.setTimeEnd("06:00 PM");
+overtime.setStatus("Approved");
+
+// Setting associated user and attendance
+User user = new User();
+Attendance attendance = new Attendance();
+overtime.setUser(user);
+overtime.setAttendance(attendance);
+```
+
+### Notes:
+- Ensure that the necessary dependencies for ORMLite are included in the project to work with the annotations properly.
+- Performance considerations may arise when dealing with large datasets or complex queries related to overtime records.
+- Handle edge cases such as null values or incorrect data formats when setting date, time, or status fields.

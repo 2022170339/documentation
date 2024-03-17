@@ -1,0 +1,47 @@
+
+export const metadata = {
+    title: "LoginView.java"
+}
+
+
+# File Name: `LoginView.java`
+
+## Overview:
+The `LoginView.java` file contains the implementation of a user login view for a Java application. It provides a graphical user interface for users to input their username and password, attempt to log in, and exit the application. The class handles user authentication by checking the entered credentials against stored user data in repositories, displaying appropriate messages, and redirecting to a dashboard upon successful login.
+
+## Usage:
+The `LoginView` class is used to create a login window where users can input their credentials and attempt to log in. Here is an example of how to use the `LoginView` class in a Java application:
+
+```java
+// Create repositories DTO
+RepositoriesDto repositoriesDto = new RepositoriesDto(userRepository, userRoleRepository);
+
+// Create a MultiWindowTextGUI instance
+MultiWindowTextGUI gui = // Initialize MultiWindowTextGUI;
+
+// Create an instance of the LoginView
+LoginView loginView = new LoginView(gui, repositoriesDto);
+
+// Get the login button from the view
+Button loginButton = loginView.getLoginButton();
+
+// Get the exit button from the view
+Button exitButton = loginView.getExitButton();
+
+// Get the username and password entered by the user
+String username = loginView.getUsername();
+String password = loginView.getPassword();
+
+// Get the window associated with the LoginView
+BasicWindow loginWindow = loginView.getWindow();
+
+// Add the LoginView window to the GUI
+gui.addWindowAndWait(loginWindow);
+```
+
+### Notes:
+- The `LoginView` class interacts with repositories to fetch user and user role data for authentication.
+- Password input is masked for security using the `setMask('*')` method on the password text box.
+- Upon successful login, the user is redirected to a dashboard view.
+- Invalid username or password will display an error message using `MessageDialog`.
+

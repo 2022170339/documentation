@@ -1,0 +1,36 @@
+
+export const metadata = {
+    title: "ShowPayrollReport.java"
+}
+
+
+# File Name: `ShowPayrollReport.java`
+
+## Overview
+The `ShowPayrollReport.java` file is a Java class that implements the `IView` interface. It is responsible for displaying a payroll report for a specific user using the Lanterna GUI library. The class retrieves the user's payroll data from the provided repositories and displays it in a window with options to view detailed information for each payroll entry.
+
+## Usage
+The `ShowPayrollReport` class can be used in a Java application to show payroll reports to users. Below is an example of how to create an instance of `ShowPayrollReport` and display the payroll report window:
+
+```java
+// Create a MultiWindowTextGUI instance
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+
+// Create an instance of RepositoriesDto and provide necessary data
+RepositoriesDto repositoriesDto = new RepositoriesDto();
+
+// Provide the user ID for which the payroll report needs to be displayed
+int userId = 123;
+
+// Create an instance of ShowPayrollReport
+ShowPayrollReport payrollReport = new ShowPayrollReport(gui, userId, repositoriesDto);
+
+// Get the window and display it
+gui.addWindowAndWait(payrollReport.getWindow());
+```
+
+### Notes
+- The class relies on the Lanterna GUI library for creating the user interface.
+- It retrieves the payroll data for a specific user from the provided repositories using the user ID.
+- Users can view detailed information for each payroll entry by clicking the "View" button associated with that entry.
+- The window includes a "Close" button to close the payroll report window when needed.

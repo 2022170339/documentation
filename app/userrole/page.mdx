@@ -1,0 +1,31 @@
+
+export const metadata = {
+    title: "UserRole.java"
+}
+
+
+# File Name: `UserRole.java`
+
+## Overview:
+The `UserRole.java` file defines a Java class `UserRole` that represents the association between a `User` and a `Role`. It uses the ORMLite library annotations to map the class to a database table named "user_roles". The class contains fields for the user's ID, the associated `User` object, and the associated `Role` object. Additionally, it provides constructors and getter/setter methods to manipulate these fields.
+
+## Usage:
+The `UserRole` class can be used to establish the relationship between a `User` and a `Role` in a database. Here is an example of how you can create an instance of `UserRole` and set the user and role:
+
+```java
+// Create a User and Role instance
+User user = new User("John");
+Role role = new Role("Admin");
+
+// Create a UserRole instance linking the User and Role
+UserRole userRole = new UserRole(user, role);
+
+// Get the User and Role from the UserRole instance
+User retrievedUser = userRole.getUser();
+Role retrievedRole = userRole.getRole();
+```
+
+### Notes:
+- Ensure that the `User` and `Role` classes are properly defined and mapped with ORMLite to prevent any mapping errors.
+- Performance considerations may arise when dealing with a large number of `UserRoles`. Consider optimizing queries or indexing based on your specific use case.
+- Handle edge cases such as null values for `User` or `Role` objects to prevent NullPointerExceptions during operations.

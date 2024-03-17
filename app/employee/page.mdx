@@ -1,0 +1,42 @@
+
+export const metadata = {
+    title: "Employee.java"
+}
+
+
+# File Name: `Employee.java`
+
+## Overview:
+The `Employee.java` file defines a Java class representing an employee in a system. It contains various fields to store employee information such as name, contact details, employment details, and emergency contact information. The class utilizes the ORM mapping annotations from the `ormlite` library to map Java objects to database tables.
+
+## Usage:
+The `Employee` class can be used to create and manage employee data within an application. Below is a basic example of how to create an instance of the `Employee` class and set some attributes:
+
+```java
+import com.mmdc.oop.Models.Employee;
+
+// Create a new Employee instance
+Employee employee = new Employee();
+
+// Set employee details
+employee.setFirstName("John");
+employee.setLastName("Doe");
+employee.setDateOfBirth("1990-05-15");
+employee.setEmail("john.doe@example.com");
+employee.setDepartment("IT");
+employee.setEmployeeType("Full Time");
+employee.setSalary(50000.0);
+employee.setShiftStartTime("08:00");
+employee.setShiftEndTime("17:00");
+
+// Get employee details
+System.out.println("Employee Name: " + employee.getFirstName() + " " + employee.getLastName());
+System.out.println("Employee Email: " + employee.getEmail());
+System.out.println("Employee Department: " + employee.getDepartment());
+System.out.println("Employee Salary: " + employee.getSalary());
+```
+
+### Notes:
+- Ensure compatibility with the `ormlite` library version being used.
+- Consider performance implications when working with a large number of `Employee` objects.
+- Handle edge cases such as null values for optional fields appropriately in your application logic.

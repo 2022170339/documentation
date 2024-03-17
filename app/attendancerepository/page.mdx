@@ -1,0 +1,74 @@
+
+export const metadata = {
+    title: "AttendanceRepository.java"
+}
+
+
+# File Name: `AttendanceRepository.java`
+
+## Overview:
+The `AttendanceRepository.java` file contains a class that implements the `IRepository` interface for managing `Attendance` objects. It provides methods to interact with the database, such as finding, saving, updating, and deleting attendance records.
+
+## Usage:
+The `AttendanceRepository` class can be used in a Java application to perform CRUD (Create, Read, Update, Delete) operations on `Attendance` objects. Below are some examples demonstrating how to use the `AttendanceRepository` class:
+
+### Instantiation:
+```java
+// Create a connection source (connectionSource) to the database
+ConnectionSource connectionSource = createConnectionSource();
+
+// Instantiate the AttendanceRepository
+AttendanceRepository attendanceRepository = new AttendanceRepository(connectionSource);
+```
+
+### Finding an Attendance by ID:
+```java
+// Find an Attendance record by ID
+Attendance attendance = attendanceRepository.findById(1);
+System.out.println(attendance);
+```
+
+### Finding all Attendances:
+```java
+// Retrieve a list of all Attendances
+List<Attendance> allAttendances = attendanceRepository.findAll();
+for (Attendance attendance : allAttendances) {
+    System.out.println(attendance);
+}
+```
+
+### Saving an Attendance:
+```java
+// Create a new Attendance object
+Attendance newAttendance = new Attendance("John Doe", "2022-01-01");
+
+// Save the new Attendance record
+Attendance savedAttendance = attendanceRepository.save(newAttendance);
+System.out.println(savedAttendance);
+```
+
+### Updating an Attendance:
+```java
+// Retrieve an existing Attendance record to update
+Attendance existingAttendance = attendanceRepository.findById(1);
+
+// Update the existing Attendance record
+existingAttendance.setAttendanceDate("2022-02-01");
+Attendance updatedAttendance = attendanceRepository.update(existingAttendance);
+System.out.println(updatedAttendance);
+```
+
+### Deleting an Attendance:
+```java
+// Retrieve an Attendance record to delete
+Attendance attendanceToDelete = attendanceRepository.findById(1);
+
+// Delete the Attendance record
+attendanceRepository.delete(attendanceToDelete);
+```
+
+### Notes:
+- This `AttendanceRepository` class uses ORMLite library for database operations.
+- It is recommended to handle exceptions properly when using the methods of this class.
+- Ensure proper connection handling to avoid resource leaks.
+

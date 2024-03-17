@@ -1,0 +1,36 @@
+
+export const metadata = {
+    title: "DeleteUserView.java"
+}
+
+
+# File Name: `DeleteUserView.java`
+
+## Overview:
+The `DeleteUserView.java` file is a Java class that represents a view for deleting a user in an application. It utilizes the Lanterna library for creating a graphical user interface (GUI) with buttons and labels. The view prompts the user to confirm the deletion of a user and handles the deletion process by interacting with user and employee repositories.
+
+## Usage:
+The `DeleteUserView` class can be used in an application to present a confirmation dialog for deleting a user. Below is an example of how to use this class to create the delete user view:
+
+```java
+// Create repositoriesDto object with necessary repositories
+RepositoriesDto repositoriesDto = new RepositoriesDto(userRepository, employeeRepository, userRoleRepository);
+
+// Create MultiWindowTextGUI object
+MultiWindowTextGUI gui = new MultiWindowTextGUI(screen);
+
+// Instantiate DeleteUserView passing gui, user id, and repositoriesDto
+DeleteUserView deleteUserView = new DeleteUserView(gui, userId, repositoriesDto);
+
+// Get the window from DeleteUserView
+BasicWindow deleteUserWindow = deleteUserView.getWindow();
+
+// Add the window to the GUI and display it
+gui.addWindow(deleteUserWindow);
+```
+
+### Notes:
+- Ensure that the `RepositoriesDto` object passed to the `DeleteUserView` constructor contains the required repositories.
+- The view assumes the existence of user, employee, and user role repositories for handling the delete operation.
+- Handle edge cases such as user not found and appropriate success or error messages.
+- The class follows the Model-View-Controller (MVC) design pattern by separating the view logic from the data and business logic.

@@ -1,0 +1,44 @@
+
+export const metadata = {
+    title: "PayrollRepository.java"
+}
+
+
+# File Name: `PayrollRepository.java`
+
+## Overview:
+The `PayrollRepository` Java class is responsible for interacting with the database to perform CRUD operations on `Payroll` entities. It implements the `IRepository` interface with methods to find by ID, find all, save, update, and delete payroll records.
+
+## Usage:
+The `PayrollRepository` class can be used to manage payroll data persistence in a Java application. Below is an example demonstrating how to use the class in a real-world scenario:
+
+### Example:
+```java
+// Create a connection source
+ConnectionSource connectionSource = createConnectionSource();
+
+// Instantiate the PayrollRepository
+PayrollRepository payrollRepository = new PayrollRepository(connectionSource);
+
+// Save a new Payroll entity
+Payroll newPayroll = new Payroll("John Doe", 1000.00); // Assuming Payroll constructor takes name and amount
+payrollRepository.save(newPayroll);
+
+// Find a Payroll by ID
+Payroll foundPayroll = payrollRepository.findById(1);
+
+// Update an existing Payroll entity
+foundPayroll.setAmount(1200.00);
+payrollRepository.update(foundPayroll);
+
+// Delete a Payroll entity
+payrollRepository.delete(foundPayroll);
+
+// Get all Payroll records
+List<Payroll> allPayrolls = payrollRepository.findAll();
+```
+
+### Notes:
+- This class relies on the ORMLite library for database operations.
+- Ensure proper exception handling for `SQLException` in real-world usage.
+- Consider performance implications when dealing with a large number of Payroll records.

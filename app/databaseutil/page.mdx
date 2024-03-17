@@ -1,0 +1,36 @@
+
+export const metadata = {
+    title: "DatabaseUtil.java"
+}
+
+
+# File Name: `DatabaseUtil.java`
+
+## Overview:
+The `DatabaseUtil.java` file contains a utility class `DatabaseUtil` that provides methods for copying a database file from resources to a temporary location and connecting to that database using JDBC SQLite.
+
+The `copyDatabaseToTemp` method copies a database file named `myapp.db` from the resources to a temporary location. If the database file is not found in the resources, it throws a `RuntimeException`. The copied file is returned as a `File` object.
+
+The `connectToDatabase` method utilizes the `copyDatabaseToTemp` method to copy the database file to a temporary location and then constructs a JDBC SQLite URL based on the absolute path of the copied file. It returns the constructed URL as a `String`.
+
+## Usage:
+To use the `DatabaseUtil` class to copy a database file and connect to the database, follow the example below:
+
+```java
+public class Example {
+    public static void main(String[] args) {
+        // Copy the database file to a temporary location
+        File tempDbFile = DatabaseUtil.copyDatabaseToTemp();
+        System.out.println("Database copied to: " + tempDbFile.getAbsolutePath());
+
+        // Connect to the database
+        String dbUrl = DatabaseUtil.connectToDatabase();
+        System.out.println("Connected to database using URL: " + dbUrl);
+    }
+}
+```
+
+### Notes:
+- Ensure that the database file `myapp.db` exists in the resources directory.
+- The utility methods in `DatabaseUtil` handle the file copying and connection to the database but do not handle any database operations.
+- Consider error handling and resource management when using these methods in a production environment.

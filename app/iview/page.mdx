@@ -1,0 +1,43 @@
+
+export const metadata = {
+    title: "IView.java"
+}
+
+
+export const metadata = {
+  title: `IView.java`,
+}
+
+# File Name: `IView.java`
+## Overview: 
+The `IView` interface defines a method `getWindow()` that returns a `BasicWindow` object. This interface is intended to be implemented by classes that represent a view in a user interface system.
+
+## Usage: 
+The `IView` interface can be implemented by classes to create various types of views in a user interface application. Below is an example of how `IView` can be used:
+
+```java
+package com.mmdc.oop.Views;
+
+import com.googlecode.lanterna.gui2.BasicWindow;
+import com.mmdc.oop.Interfaces.IView;
+
+public class MainView implements IView {
+
+  private BasicWindow window;
+
+  public MainView() {
+    window = new BasicWindow("Main Window");
+    // Additional view initialization logic
+  }
+
+  @Override
+  public BasicWindow getWindow() {
+    return window;
+  }
+}
+```
+
+### Notes
+- This interface is compatible with classes that use `BasicWindow` from the Lanterna library.
+- When implementing this interface, consider performance implications of the methods in the implementing class, especially if they involve heavy computations.
+- Handle any edge cases related to creating and managing windows in the implementing classes to ensure smooth user interface interactions.

@@ -1,0 +1,31 @@
+
+export const metadata = {
+    title: "ApplyForLeaveView.java"
+}
+
+
+# File Name: `ApplyForLeaveView.java`
+
+## Overview:
+The `ApplyForLeaveView` Java class represents a view for applying for leave in a user interface. It creates a window with various components to select leave type, view and select dates on a calendar, and submit the leave application.
+
+## Usage:
+To use the `ApplyForLeaveView` class, you can create an instance of it by providing the required parameters like `MultiWindowTextGUI`, `userId`, and `repositoriesDto`. Here is an example of how you can use the `ApplyForLeaveView` class:
+
+```java
+// Instantiate the ApplyForLeaveView
+MultiWindowTextGUI gui = new MultiWindowTextGUI();
+Integer userId = 1; // User ID
+RepositoriesDto repositoriesDto = new RepositoriesDto(); // Repositories DTO object
+
+ApplyForLeaveView applyForLeaveView = new ApplyForLeaveView(gui, userId, repositoriesDto);
+
+// Get the window and display it
+BasicWindow window = applyForLeaveView.getWindow();
+gui.addWindowAndWait(window);
+```
+
+### Notes:
+- The class uses components from `lanterna` library for creating the user interface.
+- It allows the user to select leave type, choose dates on a calendar, and submit the leave application.
+- The class handles date selection and interaction with the user interface elements to submit a leave application.

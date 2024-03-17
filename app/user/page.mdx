@@ -1,0 +1,31 @@
+
+export const metadata = {
+    title: "User.java"
+}
+
+
+# File Name: `User.java`
+
+## Overview: 
+The `User.java` file defines a Java class `User` that represents a user entity. It is annotated with ORMlite annotations to map the class to a database table named "users". The class contains fields for the user's ID, username, password, and a reference to an associated employee. It also includes constructors and getter/setter methods for these fields.
+
+## Usage: 
+The `User` class can be used to create and manipulate user objects and store/retrieve them from a database. Below is an example of how to create a `User` object and set its properties in a Java application:
+
+```java
+// Create a new User object
+User user = new User();
+
+// Set user properties
+user.setUsername("john_doe");
+user.setPassword("securePassword");
+
+// Assign an employee to the user
+Employee employee = new Employee();
+user.setEmployee(employee);
+```
+
+### Notes
+- Ensure that the `Employee` class is available and properly defined to set the `employee` field in the `User` class.
+- When using the `User` class with a database, make sure the database table "users" is created with appropriate columns matching the fields in the class.
+

@@ -183,7 +183,6 @@ const SortableItem = ({
       ref={setNodeRef}
       style={style}
       className={`flex flex-row gap-2 justify-between border rounded-lg p-2 mb-2`}>
-      {id}
       <div className="flex">
         <Button
           variant={"ghost"}

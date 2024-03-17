@@ -6,6 +6,15 @@ import { eq } from "drizzle-orm";
 import { unstable_noStore } from "next/cache";
 import Markdown from "./[slug]/_components/Markdown";
 
+export async function generateMetadata() {
+  const dbPage = await db.query.pages.findFirst({
+    where: eq(pages.slug, "home")
+  })
+
+  return {
+    title: dbPage?.title || 'Page not found'
+  }
+}
 
 export default async function Page() {
   unstable_noStore();

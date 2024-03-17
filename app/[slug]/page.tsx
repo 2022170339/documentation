@@ -7,6 +7,23 @@ import { unstable_noStore } from "next/cache";
 import Markdown from "./_components/Markdown";
 import { redirect } from "next/navigation";
 
+export async function generateMetadata({ params }: {
+  params: {
+    slug: string;
+  }
+}) {
+  if (params.slug === 'home') {
+    return redirect('/');
+  }
+
+  const dbPage = await db.query.pages.findFirst({
+    where: eq(pages.slug, params.slug)
+  })
+
+  return {
+    title: dbPage?.title || 'Page not found'
+  }
+}
 
 export default async function Page({
   params

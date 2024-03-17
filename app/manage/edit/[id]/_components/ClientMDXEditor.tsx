@@ -72,6 +72,17 @@ export default function ClientMDXEditor({ data, onSave }: Props) {
         <div className="flex items-center">
           <Button onClick={handlePublish}>Publish</Button>
         </div>
+        {
+          data.id && data.slug && (
+            <div className="flex items-center">
+              <Button variant="outline" asChild>
+                <Link href={`/${data.slug}`} target="_blank">
+                  Preview
+                </Link>
+              </Button>
+            </div>
+          )
+        }
       </div>
       <Label htmlFor="slug">Slug</Label>
       <Input id="slug" value={slug} onChange={(event) => setSlug(event.target.value)} placeholder="Enter a slug..." required />

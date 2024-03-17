@@ -1,6 +1,6 @@
 "use client"
 
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ClientMDXEditor from "../edit/[id]/_components/ClientMDXEditor";
 
 export default function Page() {

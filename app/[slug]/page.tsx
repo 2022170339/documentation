@@ -5,6 +5,7 @@ import { pages } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { unstable_noStore } from "next/cache";
 import Markdown from "./_components/Markdown";
+import { redirect } from "next/navigation";
 
 
 export default async function Page({
@@ -15,6 +16,11 @@ export default async function Page({
   }
 }) {
   unstable_noStore();
+
+  if (params.slug === 'home') {
+    return redirect('/');
+  }
+
   const dbPage = await db.query.pages.findFirst({
     where: eq(pages.slug, params.slug)
   })

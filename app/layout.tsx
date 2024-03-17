@@ -6,6 +6,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Toaster } from "@/components/ui/sonner";
 import db from "@/db/drizzle";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import MobileNav from "@/components/mobile-nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,11 +27,14 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <header className="h-[64px] border shadow-sm sticky top-0 bg-white">
-          <div className="flex container items-center h-full">
+          <div className="flex justify-between md:justify-start container items-center h-full">
             <div className="flex font-black text-2xl my-auto">
               <Link href="/">
                 OOP Documentation
               </Link>
+            </div>
+            <div className="flex z-50">
+              <MobileNav data={dbnavs} />
             </div>
           </div>
         </header>

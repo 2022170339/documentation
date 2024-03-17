@@ -17,7 +17,7 @@ export default function Sidebar({
   }[]
 
   return (
-    <ul className="flex h-full w-full flex-col gap-2 [&_li]:mb-0">
+    <ul className="flex h-full w-full flex-col gap-2 [&_li]:mb-0 bg-white z-50 opacity-100">
       {
         navigations.map((item, index) => {
           if (item.isHeader) {

@@ -35,7 +35,7 @@ export default function Sidebar({
           } else {
             return (
               <li key={index}>
-                <Link className={`${"hover:underline"} ${path.includes(item.label) ? "underline" : ""}`} href={"/" + item.url || "#"}>
+                <Link className={`${"hover:underline"} ${path.includes(item.url || "") ? "underline" : ""}`} href={"/" + item.url || "#"}>
                   {item.label}
                 </Link>
               </li>
